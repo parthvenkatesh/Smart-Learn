@@ -6,12 +6,33 @@ import {
   VrButton,
 } from 'react-360';
 
+
 export default class LeftScreen extends React.Component {
+
+
+    constructor(props){
+    super(props)
+
+    this.state = {
+      page : 1
+    }
+    console.log('Constructor')
+    alert('Constructor')
+  }
+
+  click(){
+    this.setState({
+      page: this.state.page + 1
+    })
+    console.log(this.state.page)
+
+  }
+
   render() {
     return (
         <View style={styles.panel}      >
-            <VrButton>
-                <Text>W</Text>
+            <VrButton  onClick={ ()=> this.click() } >
+                <Text>Hi</Text>
             </VrButton>
       </View>
     );
